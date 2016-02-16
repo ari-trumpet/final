@@ -31,7 +31,7 @@ uint32_t fmul(uint32_t a, uint32_t b) {
     result.exp  = 255;
     result.frac = 0; // inf or -inf
   } else if ((a_32bit.exp == 0) || (b_32bit.exp == 0)) {
-    result.sign = 0;//a_32bit.sign ^ b_32bit.sign;
+    result.sign = a_32bit.sign ^ b_32bit.sign;
     result.exp  = 0;
     result.frac = 0; // どちらか一方が０ならば全て０に。(非正規化数も全て０に。)
   } else {
